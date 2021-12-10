@@ -1,4 +1,4 @@
-const { getInputAsArray, permute } = require('./lib');
+const { getInputAsArray } = require('./lib');
 
 const MAX = 9;
 
