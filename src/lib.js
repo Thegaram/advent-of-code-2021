@@ -42,10 +42,28 @@ function permute(inputArr) {
  return result;
 }
 
+function plus(n) {
+  return x => (x || 0) + n;
+}
+
+function update(obj, ...rest) {
+  let ptr = obj;
+
+  for (let ii = 0; ii < rest.length - 2; ++ii) {
+    ptr[rest[ii]] = ptr[rest[ii]] || {};
+    ptr = ptr[rest[ii]];
+  }
+
+  ptr[rest[rest.length - 2]] = rest[rest.length - 1](ptr[rest[rest.length - 2]]);
+  return obj;
+}
+
 module.exports = {
   clone,
   getInputAsArray,
   isLowerCase,
   isUpperCase,
+  plus,
   permute,
+  update,
 };

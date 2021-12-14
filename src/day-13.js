@@ -13,7 +13,7 @@ function print(points) {
   for (let y = -1; y <= ymax + 1; ++y) {
     for (let x = -1; x <= xmax + 1; ++x) {
       const isPoint = points.some(([x2, y2]) => x2 == x && y2 == y);
-      process.stdout.write(isPoint ? '#' : '.');
+      process.stdout.write(isPoint ? '█' : ' ');
     }
     process.stdout.write('\n');
   }
